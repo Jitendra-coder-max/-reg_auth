@@ -26,5 +26,13 @@ const BoxCompo = () => {
 
 export default BoxCompo
 
+// in App.css file
+.Box {
+  height: 100px;
+  width: 100px;
+  background-color: aquamarine;
+  margin: 10px;
+  float:right
+}
 
 
