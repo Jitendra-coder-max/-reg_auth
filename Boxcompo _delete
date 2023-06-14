@@ -1,0 +1,34 @@
+const BoxComponent = () => {
+  const [boxes, setBoxes] = useState([]);
+
+  const handleAddBox = () => {
+    const newBox = {
+      id: Math.random().toString(),
+      // Add any other properties you want for the box
+    };
+
+    setBoxes(prevBoxes => [...prevBoxes, newBox]);
+  };
+
+  const handleRemoveBox = (id) => {
+    setBoxes(prevBoxes => prevBoxes.filter(box => box.id !== id));
+  };
+
+  return (
+    <div>
+      <button id="p2" onClick={handleAddBox}>New Box</button>
+     <div id="main">
+      {boxes.map(box => (
+        <div key={box.id} className="box">
+          {/* Render the box contents */}
+          <button onClick={() => handleRemoveBox(box.id)}>Remove</button>
+        
+        </div>
+      ))}
+
+</div>
+    </div>
+  );
+};
+
+export default BoxComponent;
